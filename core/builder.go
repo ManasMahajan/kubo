@@ -7,7 +7,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ipfs/boxo/bootstrap"
 	"github.com/ipfs/kubo/core/node"
 
 	"github.com/ipfs/go-metrics-interface"
@@ -131,7 +130,7 @@ func NewNode(ctx context.Context, cfg *BuildCfg) (*IpfsNode, error) {
 		return n, nil
 	}
 
-	return n, n.Bootstrap(bootstrap.DefaultBootstrapConfig)
+	return n, nil
 }
 
 // Log the entire `app.Err()` but return only the innermost one to the user
